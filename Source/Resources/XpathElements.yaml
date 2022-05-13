@@ -1,0 +1,8 @@
+Login_page:
+    UserName:    "xpath=//android.widget.EditText[@text='Mobile Number']"
+    Password:    "xpath=//android.widget.EditText[@text='Password']"
+    LoginButton:   "id=com.lotuss.oneapp:id/button_login"
+
+Home_page:
+   LoginLink:   "id=com.lotuss.oneapp:id/tv_title"
+

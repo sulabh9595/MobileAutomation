@@ -1,0 +1,9 @@
+
+remote_url: 'http://localhost:4723/wd/hub'
+platform: 'Android'
+Device: 'emulator-5554'
+appPackage: 'com.lotuss.oneapp'
+appActivity: 'com.lotuss.oneapp.NewMainActivity'
+automationName: 'UiAutomator2'
+
+#Open Application  http://localhost:4723/wd/hub   platformName=Android   deviceName=emulator-5554   appPackage=com.lotuss.oneapp   appActivity=com.lotuss.oneapp.NewMainActivity   automationName=UiAutomator2

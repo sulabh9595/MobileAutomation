@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220512 18:12:43.620" rpa="false" schemaversion="3">
+<suite id="s1" name="pythonProject1" source="C:\Users\Desktop\PycharmProjects\pythonProject1">
+<suite id="s1-s1" name="Test" source="C:\Users\Desktop\PycharmProjects\pythonProject1\Test">
+<suite id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin" source="C:\Users\Desktop\PycharmProjects\pythonProject1\Test\PPELotussAppLoyaltyRegistrationLogin.robot">
+<test id="s1-s1-s1-t1" name="PPELoyaltyUserRegistration" line="7">
+<kw name="Open PPE Application" library="PPEKeywords">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${remote_url}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${Device}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>automationName=${automationName}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220512 18:12:44.463" endtime="20220512 18:13:01.858"/>
+</kw>
+<status status="PASS" starttime="20220512 18:12:44.463" endtime="20220512 18:13:01.858"/>
+</kw>
+<kw name="Click On Login/Register Button" library="PPEKeywords">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<arg>20</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220512 18:13:01.858" endtime="20220512 18:13:02.953"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220512 18:13:02.955" level="INFO">Clicking element 'id=com.lotuss.oneapp:id/tv_title'.</msg>
+<status status="PASS" starttime="20220512 18:13:02.953" endtime="20220512 18:13:03.971"/>
+</kw>
+<status status="PASS" starttime="20220512 18:13:01.858" endtime="20220512 18:13:03.972"/>
+</kw>
+<status status="PASS" starttime="20220512 18:12:44.462" endtime="20220512 18:13:03.972"/>
+</test>
+<status status="PASS" starttime="20220512 18:12:43.682" endtime="20220512 18:13:03.972"/>
+</suite>
+<status status="PASS" starttime="20220512 18:12:43.680" endtime="20220512 18:13:03.973"/>
+</suite>
+<status status="PASS" starttime="20220512 18:12:43.624" endtime="20220512 18:13:03.974"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="pythonProject1">pythonProject1</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">pythonProject1.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin">pythonProject1.Test.PPELotussAppLoyaltyRegistrationLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

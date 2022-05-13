@@ -20,3 +20,7 @@ Enter Password
 -
 Click Login Button
    Click Element   ${Login_page.LoginButton}
+
+Click in Register Link
+   Click Element   ${Login_page.RegisterLink}
+   Enter UserName

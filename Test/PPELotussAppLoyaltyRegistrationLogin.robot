@@ -7,8 +7,10 @@ Resource  ../Source/Library/Custom_Library.robot
 PPELoyaltyUserRegistration
   Open PPE Application
   Click On Login/Register Button
+  Click in Register Link
 
 
 
 
 
+`

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220513 13:41:39.204" rpa="false" schemaversion="3">
-<suite id="s1" name="MobileAutomation" source="C:\Users\Desktop\Documents\MobileAutomation">
-<suite id="s1-s1" name="Test" source="C:\Users\Desktop\Documents\MobileAutomation\Test">
-<suite id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin" source="C:\Users\Desktop\Documents\MobileAutomation\Test\PPELotussAppLoyaltyRegistrationLogin.robot">
-<test id="s1-s1-s1-t1" name="PPELoyaltyUserRegistration" line="7">
-<kw name="Open PPE Application" library="PPEKeywords">
+<robot generator="Robot 5.0 (Python 3.7.4 on win32)" generated="20220519 09:28:10.349" rpa="false" schemaversion="3">
+<suite id="s1" name="MobileAutomation-main" source="D:\meenakshi.n06\OneDrive - Infosys Limited\CP Lotus\Automation\MobileAutomation-main\MobileAutomation-main">
+<suite id="s1-s1" name="Test" source="D:\meenakshi.n06\OneDrive - Infosys Limited\CP Lotus\Automation\MobileAutomation-main\MobileAutomation-main\Test">
+<suite id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin" source="D:\meenakshi.n06\OneDrive - Infosys Limited\CP Lotus\Automation\MobileAutomation-main\MobileAutomation-main\Test\PPELotussAppLoyaltyRegistrationLogin.robot">
+<test id="s1-s1-s1-t1" name="PPELoyaltyUserRegistration" line="8">
+<kw name="Open PPE Application" library="CommonKeywords">
+<arg>ECOM</arg>
+<if>
+<branch type="IF" condition="'${Application}' == 'ECOM'">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>${remote_url}</arg>
 <arg>platformName=${platform}</arg>
@@ -18,51 +21,667 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20220513 13:41:39.454" endtime="20220513 13:41:52.454"/>
+<status status="PASS" starttime="20220519 09:28:11.014" endtime="20220519 09:28:37.624"/>
 </kw>
-<status status="PASS" starttime="20220513 13:41:39.454" endtime="20220513 13:41:52.454"/>
+<status status="PASS" starttime="20220519 09:28:11.014" endtime="20220519 09:28:37.624"/>
+</branch>
+<status status="PASS" starttime="20220519 09:28:11.014" endtime="20220519 09:28:37.624"/>
+</if>
+<status status="PASS" starttime="20220519 09:28:11.013" endtime="20220519 09:28:37.625"/>
 </kw>
-<kw name="Click On Login/Register Button" library="PPEKeywords">
+<kw name="Click On Login/Register Link" library="PPE_User_Login_Keywords">
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${Home_page.LoginLink}</arg>
-<arg>20</arg>
+<arg>${wait}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20220513 13:41:52.455" endtime="20220513 13:41:53.701"/>
+<status status="PASS" starttime="20220519 09:28:37.627" endtime="20220519 09:28:42.456"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${Home_page.LoginLink}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220513 13:41:53.703" level="INFO">Clicking element 'id=com.lotuss.oneapp:id/tv_title'.</msg>
-<status status="PASS" starttime="20220513 13:41:53.701" endtime="20220513 13:41:55.490"/>
+<msg timestamp="20220519 09:28:42.466" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Register / Login']'.</msg>
+<status status="PASS" starttime="20220519 09:28:42.456" endtime="20220519 09:28:43.941"/>
 </kw>
-<status status="PASS" starttime="20220513 13:41:52.455" endtime="20220513 13:41:55.490"/>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:28:45.333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:28:43.942" endtime="20220519 09:28:45.333"/>
 </kw>
-<kw name="Click in Register Link" library="PPEKeywords">
+<status status="PASS" starttime="20220519 09:28:37.626" endtime="20220519 09:28:45.334"/>
+</kw>
+<kw name="Click in Register Link" library="PPE_Registration_Keyword">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Login_page.RegisterLink}</arg>
+<arg>80</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220519 09:28:45.335" endtime="20220519 09:28:45.635"/>
+</kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${Login_page.RegisterLink}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20220513 13:41:55.493" level="INFO">Clicking element 'id=com.lotuss.oneapp:id/text_view_register'.</msg>
-<status status="PASS" starttime="20220513 13:41:55.491" endtime="20220513 13:41:56.472"/>
+<msg timestamp="20220519 09:28:45.643" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/text_view_register'.</msg>
+<status status="PASS" starttime="20220519 09:28:45.636" endtime="20220519 09:28:45.766"/>
 </kw>
-<kw name="Enter UserName" library="PPEKeywords">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:28:46.725" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:28:45.766" endtime="20220519 09:28:46.725"/>
+</kw>
+<status status="PASS" starttime="20220519 09:28:45.334" endtime="20220519 09:28:46.726"/>
+</kw>
+<kw name="Get available phone number from testrail config" library="PPE_Registration_Keyword">
+<kw name="Run" library="OperatingSystem">
+<var>${result}</var>
+<arg>pip3 install requests</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20220519 09:28:46.795" level="INFO">Running command 'pip3 install requests 2&gt;&amp;1'.</msg>
+<msg timestamp="20220519 09:28:49.752" level="INFO">${result} = Requirement already satisfied: requests in c:\users\meenakshi.n06\appdata\roaming\python\python310\site-packages (2.27.1)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\meenakshi.n06\ap...</msg>
+<status status="PASS" starttime="20220519 09:28:46.728" endtime="20220519 09:28:49.752"/>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<var>${result}</var>
+<arg>pip3 install testrail-api</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20220519 09:28:49.788" level="INFO">Running command 'pip3 install testrail-api 2&gt;&amp;1'.</msg>
+<msg timestamp="20220519 09:28:51.745" level="INFO">${result} = Requirement already satisfied: testrail-api in c:\python310\lib\site-packages (1.10.4)
+Requirement already satisfied: requests&gt;=2.20.1 in c:\users\meenakshi.n06\appdata\roaming\python\python310\site-p...</msg>
+<status status="PASS" starttime="20220519 09:28:49.752" endtime="20220519 09:28:51.745"/>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<var>${result}</var>
+<arg>.\\lib\\get_new_phone_number.py</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20220519 09:28:51.778" level="INFO">Running command '.\lib\get_new_phone_number.py 2&gt;&amp;1'.</msg>
+<msg timestamp="20220519 09:28:56.174" level="INFO">${result} = 0523970651</msg>
+<status status="PASS" starttime="20220519 09:28:51.745" endtime="20220519 09:28:56.174"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${phone_number_for_register}</arg>
+<arg>${result}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220519 09:28:56.176" level="INFO">${phone_number_for_register} = 0523970651</msg>
+<status status="PASS" starttime="20220519 09:28:56.174" endtime="20220519 09:28:56.176"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${phone_number_for_register}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220519 09:28:56.176" endtime="20220519 09:28:56.177"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:28:56.598" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:28:56.177" endtime="20220519 09:28:56.598"/>
+</kw>
+<status status="PASS" starttime="20220519 09:28:46.726" endtime="20220519 09:28:56.598"/>
+</kw>
+<kw name="Fill in phone number on registration page" library="PPE_Registration_Keyword">
+<arg>${phone_number_for_register}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:06.608" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220519 09:28:56.600" endtime="20220519 09:29:06.609"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Registration.Mobile_No}</arg>
+<arg>${Wait}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:06.609" endtime="20220519 09:29:06.680"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Registration.Mobile_No}</arg>
+<arg>${Phone_Number}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:06.683" level="INFO">Typing text '0523970651' into text field 'xpath=//android.widget.EditText[@text='Mobile Number']'</msg>
+<status status="PASS" starttime="20220519 09:29:06.680" endtime="20220519 09:29:07.428"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Registration.Next_button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:07.429" endtime="20220519 09:29:08.070"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:08.074" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/button_confirm'.</msg>
+<status status="PASS" starttime="20220519 09:29:08.070" endtime="20220519 09:29:08.142"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:07.428" endtime="20220519 09:29:08.143"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:29:08.850" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:29:08.143" endtime="20220519 09:29:08.850"/>
+</kw>
+<status status="PASS" starttime="20220519 09:28:56.599" endtime="20220519 09:29:08.851"/>
+</kw>
+<kw name="Enter OTP" library="CommonKeywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:18.854" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:08.852" endtime="20220519 09:29:18.854"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${OTPForm.OTP_Text}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:18.855" endtime="20220519 09:29:18.912"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${OTPForm.OTP_Header}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220519 09:29:18.912" endtime="20220519 09:29:18.951"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:23.958" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:18.951" endtime="20220519 09:29:23.959"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${OTPForm.OTP_Text}</arg>
+<arg>010101</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:23.967" level="INFO">Typing text '010101' into text field 'id=com.lotuss.oneapp.ppe:id/pin_viw_otp'</msg>
+<status status="PASS" starttime="20220519 09:29:23.959" endtime="20220519 09:29:24.035"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:08.852" endtime="20220519 09:29:24.035"/>
+</kw>
+<kw name="Enter Password And Confirm Password" library="PPE_Registration_Keyword">
+<arg>${Registration_Form.New_Password}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:29.050" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:24.036" endtime="20220519 09:29:29.050"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Registration.Password}</arg>
+<arg>${Sleep_Time}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:29.050" endtime="20220519 09:29:29.132"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Registration.Password}</arg>
+<arg>${Password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:29.135" level="INFO">Typing text 'Lotus@234' into text field 'xpath=//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20220519 09:29:29.132" endtime="20220519 09:29:29.296"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Registration.Confirm_Password}</arg>
+<arg>${Password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:29.302" level="INFO">Typing text 'Lotus@234' into text field 'xpath=//android.widget.EditText[@text='Confirm Password']'</msg>
+<status status="PASS" starttime="20220519 09:29:29.296" endtime="20220519 09:29:30.433"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Entered Password : ${Password}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220519 09:29:30.433" endtime="20220519 09:29:30.433"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20220519 09:29:30.434" endtime="20220519 09:29:30.978"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Registration.Select_Accept_Checkbox}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:30.982" endtime="20220519 09:29:31.683"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:31.687" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/checkbox_content'.</msg>
+<status status="PASS" starttime="20220519 09:29:31.684" endtime="20220519 09:29:31.817"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:30.979" endtime="20220519 09:29:31.817"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Registration.Set_Password_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:31.819" endtime="20220519 09:29:32.481"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:32.490" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/button_confirm'.</msg>
+<status status="PASS" starttime="20220519 09:29:32.482" endtime="20220519 09:29:32.635"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:31.817" endtime="20220519 09:29:32.635"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:29:33.533" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:29:32.635" endtime="20220519 09:29:33.534"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:24.035" endtime="20220519 09:29:33.535"/>
+</kw>
+<kw name="Choose Customer Type" library="PPE_Registration_Keyword">
+<arg>Non_Loyal</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Sleep_Time}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:38.548" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:33.536" endtime="20220519 09:29:38.549"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${OptLoyalty.Header}</arg>
+<arg>${Sleep_Time}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:38.549" endtime="20220519 09:29:38.941"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${OptLoyalty.Header}</arg>
+<arg>Activate My Lotus's</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220519 09:29:38.952" level="INFO">Verifying element 'id=com.lotuss.oneapp.ppe:id/text_view_header' contains text 'Activate My Lotus's'.</msg>
+<status status="PASS" starttime="20220519 09:29:38.942" endtime="20220519 09:29:39.029"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Customer_Type}' == 'Loyal'">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${OptLoyalty.Activate_Button}</arg>
+<status status="NOT RUN" starttime="20220519 09:29:39.031" endtime="20220519 09:29:39.031"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enroll as Loyal Customer</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220519 09:29:39.031" endtime="20220519 09:29:39.031"/>
+</kw>
+<status status="NOT RUN" starttime="20220519 09:29:39.031" endtime="20220519 09:29:39.031"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${OptLoyalty.Later_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:39.035" endtime="20220519 09:29:39.107"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:39.115" level="INFO">Clicking element 'com.lotuss.oneapp.ppe:id/button_later'.</msg>
+<status status="PASS" starttime="20220519 09:29:39.107" endtime="20220519 09:29:39.246"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:39.031" endtime="20220519 09:29:39.246"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enroll as Non Loyal Customer</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220519 09:29:39.247" endtime="20220519 09:29:39.248"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:39.031" endtime="20220519 09:29:39.248"/>
+</branch>
+<status status="PASS" starttime="20220519 09:29:39.029" endtime="20220519 09:29:39.248"/>
+</if>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:29:40.540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:29:39.248" endtime="20220519 09:29:40.540"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:33.535" endtime="20220519 09:29:40.541"/>
+</kw>
+<kw name="Verify User Logged In" library="PPE_User_Login_Keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:29:42.553" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:40.543" endtime="20220519 09:29:42.553"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_Page.LoginUserIcon}</arg>
+<arg>${Sleep_Time}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:42.554" endtime="20220519 09:29:44.737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_Page.LoginUserIcon}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:44.737" endtime="20220519 09:29:45.090"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:29:46.265" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:29:45.091" endtime="20220519 09:29:46.266"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:40.541" endtime="20220519 09:29:46.266"/>
+</kw>
+<kw name="User Logout" library="CommonKeywords">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Me_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:46.271" endtime="20220519 09:29:47.780"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:47.788" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Me']'.</msg>
+<status status="PASS" starttime="20220519 09:29:47.781" endtime="20220519 09:29:48.085"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:46.268" endtime="20220519 09:29:48.086"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Logout_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:48.090" endtime="20220519 09:29:50.892"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:50.898" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Log out']'.</msg>
+<status status="PASS" starttime="20220519 09:29:50.892" endtime="20220519 09:29:51.173"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:48.087" endtime="20220519 09:29:51.174"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_page.Logout_Popup}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:51.174" endtime="20220519 09:29:52.017"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Logout_Cofirmation_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:29:52.022" endtime="20220519 09:29:52.095"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:29:52.105" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/button_confirm'.</msg>
+<status status="PASS" starttime="20220519 09:29:52.096" endtime="20220519 09:29:52.274"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:52.018" endtime="20220519 09:29:52.276"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:30:02.288" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220519 09:29:52.277" endtime="20220519 09:30:02.288"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<arg>${wait}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220519 09:30:02.288" endtime="20220519 09:30:02.380"/>
+</kw>
+<status status="PASS" starttime="20220519 09:29:46.267" endtime="20220519 09:30:02.380"/>
+</kw>
+<kw name="Click On Login/Register Link" library="PPE_User_Login_Keywords">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<arg>${wait}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220519 09:30:02.381" endtime="20220519 09:30:02.473"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:02.483" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Register / Login']'.</msg>
+<status status="PASS" starttime="20220519 09:30:02.475" endtime="20220519 09:30:02.668"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:03.490" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:02.668" endtime="20220519 09:30:03.490"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:02.380" endtime="20220519 09:30:03.490"/>
+</kw>
+<kw name="Enter UserName" library="PPE_User_Login_Keywords">
+<arg>${phone_number_for_register}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Login_page.UserName}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:03.493" endtime="20220519 09:30:03.930"/>
+</kw>
 <kw name="Input Text" library="AppiumLibrary">
 <arg>${Login_page.UserName}</arg>
 <arg>${MobileNo}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20220513 13:41:56.475" level="INFO">Typing text '0523800021' into text field 'xpath=//android.widget.EditText[@text='Mobile Number']'</msg>
-<status status="PASS" starttime="20220513 13:41:56.473" endtime="20220513 13:41:58.223"/>
+<msg timestamp="20220519 09:30:03.940" level="INFO">Typing text '0523970651' into text field 'xpath=//android.widget.EditText[@text='Mobile Number']'</msg>
+<status status="PASS" starttime="20220519 09:30:03.930" endtime="20220519 09:30:04.664"/>
 </kw>
-<status status="PASS" starttime="20220513 13:41:56.472" endtime="20220513 13:41:58.223"/>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:05.259" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:04.665" endtime="20220519 09:30:05.259"/>
 </kw>
-<status status="PASS" starttime="20220513 13:41:55.490" endtime="20220513 13:41:58.223"/>
+<status status="PASS" starttime="20220519 09:30:03.491" endtime="20220519 09:30:05.260"/>
 </kw>
-<status status="PASS" starttime="20220513 13:41:39.454" endtime="20220513 13:41:58.223"/>
+<kw name="Enter Password" library="PPE_User_Login_Keywords">
+<arg>${Registration_Form.New_Password}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Login_page.Password}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:05.262" endtime="20220519 09:30:05.383"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Login_page.Password}</arg>
+<arg>${Password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:05.393" level="INFO">Typing text 'Lotus@234' into text field 'xpath=//android.widget.EditText[@text='Password']'</msg>
+<status status="PASS" starttime="20220519 09:30:05.383" endtime="20220519 09:30:06.035"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:06.627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:06.036" endtime="20220519 09:30:06.627"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:05.260" endtime="20220519 09:30:06.628"/>
+</kw>
+<kw name="Click Login Button" library="PPE_User_Login_Keywords">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Login_page.LoginButton}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:06.633" endtime="20220519 09:30:06.715"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:06.722" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/button_login'.</msg>
+<status status="PASS" starttime="20220519 09:30:06.715" endtime="20220519 09:30:06.871"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:06.629" endtime="20220519 09:30:06.872"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:07.815" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:06.872" endtime="20220519 09:30:07.816"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:06.628" endtime="20220519 09:30:07.816"/>
+</kw>
+<kw name="Choose Customer Type" library="PPE_Registration_Keyword">
+<arg>Non_Loyal</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Sleep_Time}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:30:12.828" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220519 09:30:07.818" endtime="20220519 09:30:12.829"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${OptLoyalty.Header}</arg>
+<arg>${Sleep_Time}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:12.829" endtime="20220519 09:30:12.874"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${OptLoyalty.Header}</arg>
+<arg>Activate My Lotus's</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220519 09:30:12.879" level="INFO">Verifying element 'id=com.lotuss.oneapp.ppe:id/text_view_header' contains text 'Activate My Lotus's'.</msg>
+<status status="PASS" starttime="20220519 09:30:12.874" endtime="20220519 09:30:12.925"/>
+</kw>
+<if>
+<branch type="IF" condition="'${Customer_Type}' == 'Loyal'">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${OptLoyalty.Activate_Button}</arg>
+<status status="NOT RUN" starttime="20220519 09:30:12.926" endtime="20220519 09:30:12.926"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enroll as Loyal Customer</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220519 09:30:12.926" endtime="20220519 09:30:12.926"/>
+</kw>
+<status status="NOT RUN" starttime="20220519 09:30:12.926" endtime="20220519 09:30:12.927"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${OptLoyalty.Later_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:12.929" endtime="20220519 09:30:12.976"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:12.980" level="INFO">Clicking element 'com.lotuss.oneapp.ppe:id/button_later'.</msg>
+<status status="PASS" starttime="20220519 09:30:12.976" endtime="20220519 09:30:13.080"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:12.927" endtime="20220519 09:30:13.081"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enroll as Non Loyal Customer</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220519 09:30:13.081" endtime="20220519 09:30:13.082"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:12.927" endtime="20220519 09:30:13.082"/>
+</branch>
+<status status="PASS" starttime="20220519 09:30:12.925" endtime="20220519 09:30:13.082"/>
+</if>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:14.045" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:13.082" endtime="20220519 09:30:14.045"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:07.817" endtime="20220519 09:30:14.047"/>
+</kw>
+<kw name="Verify User Logged In" library="PPE_User_Login_Keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:30:16.063" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220519 09:30:14.049" endtime="20220519 09:30:16.063"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_Page.LoginUserIcon}</arg>
+<arg>${Sleep_Time}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:16.064" endtime="20220519 09:30:20.430"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_Page.LoginUserIcon}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:20.431" endtime="20220519 09:30:20.604"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<arg>${OUTPUTDIR}/customerfrontend_{index}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220519 09:30:21.611" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="customerfrontend_%7Bindex%7D.png"&gt;&lt;img src="customerfrontend_%7Bindex%7D.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220519 09:30:20.604" endtime="20220519 09:30:21.611"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:14.047" endtime="20220519 09:30:21.612"/>
+</kw>
+<kw name="User Logout" library="CommonKeywords">
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Me_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:21.616" endtime="20220519 09:30:21.794"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:21.800" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Me']'.</msg>
+<status status="PASS" starttime="20220519 09:30:21.794" endtime="20220519 09:30:22.721"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:21.613" endtime="20220519 09:30:22.722"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Logout_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:22.728" endtime="20220519 09:30:25.649"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:25.655" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text='Log out']'.</msg>
+<status status="PASS" starttime="20220519 09:30:25.649" endtime="20220519 09:30:25.900"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:22.723" endtime="20220519 09:30:25.901"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home_page.Logout_Popup}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:25.902" endtime="20220519 09:30:26.660"/>
+</kw>
+<kw name="Wait And Click Element" library="CommonKeywords">
+<arg>${Home_page.Logout_Cofirmation_Button}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220519 09:30:26.664" endtime="20220519 09:30:26.751"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Element_Path}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220519 09:30:26.759" level="INFO">Clicking element 'id=com.lotuss.oneapp.ppe:id/button_confirm'.</msg>
+<status status="PASS" starttime="20220519 09:30:26.752" endtime="20220519 09:30:26.895"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:26.661" endtime="20220519 09:30:26.896"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220519 09:30:36.906" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220519 09:30:26.897" endtime="20220519 09:30:36.906"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Home_page.LoginLink}</arg>
+<arg>${wait}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220519 09:30:36.906" endtime="20220519 09:30:36.978"/>
+</kw>
+<status status="PASS" starttime="20220519 09:30:21.612" endtime="20220519 09:30:36.978"/>
+</kw>
+<status status="PASS" starttime="20220519 09:28:11.012" endtime="20220519 09:30:36.979"/>
 </test>
-<status status="PASS" starttime="20220513 13:41:39.228" endtime="20220513 13:41:58.224"/>
+<status status="PASS" starttime="20220519 09:28:10.425" endtime="20220519 09:30:36.979"/>
 </suite>
-<status status="PASS" starttime="20220513 13:41:39.227" endtime="20220513 13:41:58.224"/>
+<status status="PASS" starttime="20220519 09:28:10.420" endtime="20220519 09:30:36.981"/>
 </suite>
-<status status="PASS" starttime="20220513 13:41:39.206" endtime="20220513 13:41:58.225"/>
+<status status="PASS" starttime="20220519 09:28:10.357" endtime="20220519 09:30:36.982"/>
 </suite>
 <statistics>
 <total>
@@ -71,9 +690,9 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="MobileAutomation">MobileAutomation</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">MobileAutomation.Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin">MobileAutomation.Test.PPELotussAppLoyaltyRegistrationLogin</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="MobileAutomation-main">MobileAutomation-main</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">MobileAutomation-main.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="PPELotussAppLoyaltyRegistrationLogin">MobileAutomation-main.Test.PPELotussAppLoyaltyRegistrationLogin</stat>
 </suite>
 </statistics>
 <errors>

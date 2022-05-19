@@ -1,11 +1,11 @@
 *** Settings ***
-#Library  SeleniumLibrary
 Library  AppiumLibrary
 Library  Collections
-#Library  OperatingSystem
+Library  Process
+Library  OperatingSystem
 #Library  String
 #Library  DateTime
 
-#Resource   ../Common/CommonKeywords.robot
-Variables  ../Common/CommonConfigs.yaml
+Resource   ../Common/CommonKeywords.robot
+Variables  ../Common/CommonConfigs and Test Data.yaml
 

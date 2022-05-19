@@ -1,0 +1,38 @@
+Registration:
+   Mobile_No: "xpath=//android.widget.EditText[@text='Mobile Number']"
+   Next_button: "id=com.lotuss.oneapp.ppe:id/button_confirm"
+   Mobile_Number_Clear_Button: "id=com.lotuss.oneapp.ppe:id/text_input_end_icon"
+   Password: "xpath=//android.widget.EditText[@text='Password']"
+   Confirm_Password: "xpath=//android.widget.EditText[@text='Confirm Password']"
+   Set_Password_Button: "id=com.lotuss.oneapp.ppe:id/button_confirm"
+   Select_Accept_Checkbox: "id=com.lotuss.oneapp.ppe:id/checkbox_content"
+
+
+Login_page:
+   UserName:    "xpath=//android.widget.EditText[@text='Mobile Number']"
+   Password:    "xpath=//android.widget.EditText[@text='Password']"
+   LoginButton:   "id=com.lotuss.oneapp.ppe:id/button_login"
+   RegisterLink: "id=com.lotuss.oneapp.ppe:id/text_view_register"
+
+Home_page:
+   LoginLink:   "xpath=//android.widget.TextView[@text='Register / Login']"
+   LoginUserIcon: "xpath= //android.view.ViewGroup[@package='com.lotuss.oneapp.ppe']"
+   Me_Button: "xpath=//android.widget.TextView[@text='Me']"
+   Logout_Button: "xpath=//android.widget.TextView[@text='Log out']"
+   Logout_Popup: "xpath=//android.widget.TextView[@text='Want to log out?']"
+   Logout_Cofirmation_Button: "id=com.lotuss.oneapp.ppe:id/button_confirm"
+
+
+OTPForm:
+   OTP_Text:   "id=com.lotuss.oneapp.ppe:id/pin_viw_otp"
+   OTP_Header: "id=com.lotuss.oneapp.ppe:id/text_view_header"
+
+
+OptLoyalty:
+   Header:  "id=com.lotuss.oneapp.ppe:id/text_view_header"
+   Activate_Button: "id=com.lotuss.oneapp.ppe:id/button_activation_form"
+   Later_Button: "com.lotuss.oneapp.ppe:id/button_later"
+
+
+
+
